@@ -1,16 +1,9 @@
-from flask import Flask, request, jsonify
-from json import dumps
+from flask import Flask
+from routes import routes
 
 app = Flask(__name__)
+app.use(routes)
 
-
-
-@app.route('/api', methods=['POST'])
-def api():
-    if request.method == 'POST':
-        data = request.get_json()
-        print(data)
-        return jsonify(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
