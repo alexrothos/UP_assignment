@@ -1,6 +1,7 @@
 from app import app
 from flask import request, jsonify
 from json import dumps
+from func import reach_for_data
 
 @app.route("route")
 def index():
@@ -8,7 +9,5 @@ def index():
 
 @app.route('/api', methods=['POST'])
 def api():
-    if request.method == 'POST':
-        data = request.get_json()
-        print(data)
-        return jsonify(data)
+    data = reach_for_data()
+    return jsonify(data)

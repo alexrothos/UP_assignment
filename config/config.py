@@ -9,3 +9,5 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'mysql://user:password@localhost/db_name'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    data_url = 'http://49.12.237.145:5150/'
